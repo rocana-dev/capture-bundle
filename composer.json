@@ -1,0 +1,65 @@
+{
+    "name": "qa-tracking/capture-bundle",
+    "description": "Adds backend context (trace ID, exception, logs and database rows) to the bug reports your QA team files with QA Tracking.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "keywords": [
+        "symfony-bundle",
+        "qa",
+        "testing",
+        "bug-report",
+        "debugging",
+        "doctrine",
+        "monolog"
+    ],
+    "authors": [
+        {
+            "name": "Ricardo Ocaña"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "psr/cache": "^2.0 || ^3.0",
+        "symfony/cache": "^6.4 || ^7.0 || ^8.0",
+        "symfony/config": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-client": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.4 || ^7.0 || ^8.0",
+        "symfony/polyfill-mbstring": "^1.26",
+        "symfony/service-contracts": "^2.5 || ^3.0"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.7 || ^4.0",
+        "doctrine/doctrine-bundle": "^2.11 || ^3.0",
+        "doctrine/orm": "^2.17 || ^3.0",
+        "monolog/monolog": "^2.9 || ^3.0",
+        "phpunit/phpunit": "^10.5 || ^11.5 || ^12.0",
+        "symfony/doctrine-bridge": "^6.4 || ^7.0 || ^8.0",
+        "symfony/framework-bundle": "^6.4 || ^7.0 || ^8.0",
+        "symfony/monolog-bridge": "^6.4 || ^7.0 || ^8.0",
+        "symfony/monolog-bundle": "^3.10 || ^4.0"
+    },
+    "conflict": {
+        "doctrine/dbal": "<3.7",
+        "doctrine/orm": "<2.17"
+    },
+    "suggest": {
+        "symfony/monolog-bundle": "To attach the log records of each request to the reports.",
+        "doctrine/orm": "To attach the rows of the entities involved to the reports."
+    },
+    "autoload": {
+        "psr-4": {
+            "QaTracking\\CaptureBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QaTracking\\CaptureBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "lock": false,
+        "sort-packages": true
+    }
+}

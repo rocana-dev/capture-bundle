@@ -1,0 +1,5 @@
+/vendor/
+/composer.lock
+/composer.matrix.json
+/composer.matrix.lock
+/.phpunit.cache/
